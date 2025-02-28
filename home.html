@@ -6,15 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vampire App</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        var chart;
+        var data;
+        var options;
+
+        function drawChart() {
+            // Create the data table.
+            data = new google.visualization.DataTable();
+            data.addColumn('string', 'Element');
+            data.addColumn('number', 'Number');
+            data.addRows([
+                ['Human', 1],
+                ['Vampire', 0]
+            ]);
+
+            // Set chart options
+            options = {
+                'title': 'Vampire Status',
+                'width': 400,
+                'height': 300
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+
+        function updateChart() {
+            var score = calculateScore();
+            var vampire = score > 6 ? 1 : 0;
+            var human = 1 - vampire;
+
+            data.removeRows(0, data.getNumberOfRows()); // Clear existing rows
+            data.addRows([
+                ['Human', human],
+                ['Vampire', vampire]
+            ]);
+
+            chart.draw(data, options);
+        }
+
+        function calculateScore() {
+            var score = 0;
+
+            if (document.querySelector('input[name="shadow"]:checked')?.value === 'no') {
+                score += 4;
+            }
+            if (document.querySelector('input[name="pale"]:checked')?.value === 'yes') {
+                score += 3;
+            }
+            if (document.querySelector('input[name="garlic"]:checked')?.value === 'no') {
+                score += 3;
+            }
+
+            return score;
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <h1>Welcome to the Vampire App</h1>
     </header>
-    <footer></footer>
     <main>
         <p>This is the home page of the Vampire App.</p>
+        <div id="chart_div"></div>
+        <h2>Do you have a shadow?</h2>
+        <input type="radio" name="shadow" value="yes"> Yes
+        <input type="radio" name="shadow" value="no"> No
+
+        <h2>Are you allergic to garlic?</h2>
+        <input type="radio" name="garlic" value="yes"> Yes
+        <input type="radio" name="garlic" value="no"> No
+
+        <h2>Are you pale?</h2>
+        <input type="radio" name="pale" value="yes"> Yes
+        <input type="radio" name="pale" value="no"> No
+
+        <button onclick="updateChart()">Update Chart</button>
     </main>
 </body>
 
