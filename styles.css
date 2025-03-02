@@ -1,0 +1,85 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f8ff; /* Light pastel blue */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #6a5acd; /* Soft purple */
+    padding: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Main Content Box */
+main {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff; /* White background */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(106, 90, 205, 0.3); /* Soft purple glow */
+}
+
+/* Headings */
+h2 {
+    color: #6a5acd;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Form Questions Styling */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 12px 0 5px;
+}
+
+/* Input Radio Buttons & Checkbox */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.1);
+}
+
+/* Center the Radio Options */
+.radio-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff9800; /* Bright orange */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #e68900; /* Slightly darker orange */
+}
+
+/* Google Chart */
+#chart_div {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
