@@ -56,6 +56,6 @@ function determineVampire() {
     if (useRandomGuess) {
         return Math.random() < 0.5 ? 1 : 0;
     } else {
-        return calculateScore() > 6 ? 1 : 0;
+        return calculateScore() >= 6 ? 1 : 0;
     }
 }
