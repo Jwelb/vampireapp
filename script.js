@@ -39,15 +39,15 @@ function updateChart() {
 
 function calculateScore() {
     var score = 0;
-    if (document.querySelector('input[name="shadow"]:checked')?.value === 'no') {
-        score += 4;
-    }
-    if (document.querySelector('input[name="pale"]:checked')?.value === 'yes') {
-        score += 3;
-    }
-    if (document.querySelector('input[name="garlic"]:checked')?.value === 'no') {
-        score += 3;
-    }
+
+    var shadow = document.querySelector('input[name="shadow"]:checked')?.value;    
+    var pale = document.querySelector('input[name="pale"]:checked')?.value;
+    var garlic = document.querySelector('input[name="garlic"]:checked')?.value;
+
+    if(shadow === 'no') score += 4;
+    if(pale === 'yes') score += 3;
+    if(garlic === 'yes') score += 3;
+
     return score;
 }
 

@@ -19,16 +19,19 @@
         <p>This is the home page of the Vampire App.</p>
         <div id="chart_div"></div>
         <h2>Do you have a shadow?</h2>
-        <input type="radio" name="shadow" value="yes"> Yes
+        <input type="radio" name="shadow" value="yes" checked> Yes
         <input type="radio" name="shadow" value="no"> No
 
         <h2>Are you allergic to garlic?</h2>
-        <input type="radio" name="garlic" value="yes"> Yes
+        <input type="radio" name="garlic" value="yes" checked> Yes
         <input type="radio" name="garlic" value="no"> No
 
         <h2>Are you pale?</h2>
-        <input type="radio" name="pale" value="yes"> Yes
+        <input type="radio" name="pale" value="yes" checked> Yes
         <input type="radio" name="pale" value="no"> No
+
+        <h2>Use random guess?</h2>
+        <input type="checkbox" id="randomGuess"> Yes
 
         <button onclick="updateChart()">Update Chart</button>
     </main>
