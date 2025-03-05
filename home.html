@@ -18,6 +18,7 @@
     <main>
         <p>This is the home page of the Vampire App.</p>
         <div id="chart_div"></div>
+
         <h2>Do you have a shadow?</h2>
         <input type="radio" name="shadow" value="yes" checked> Yes
         <input type="radio" name="shadow" value="no"> No
@@ -30,10 +31,17 @@
         <input type="radio" name="pale" value="yes" checked> Yes
         <input type="radio" name="pale" value="no"> No
 
-        <h2>Use random guess?</h2>
-        <input type="checkbox" id="randomGuess"> Yes
+        <h2>Choose Method</h2>
+        <div class="form-group">
+            <label for="method">Select Model Logic:</label>
+            <select class="form-control" id="method">
+                <option value="random">Random Guess</option>
+                <option value="threshold">Threshold Based Method</option>
+            </select>
+        </div>
 
-        <button onclick="updateChart()">Update Chart</button>
+        <button type="button" onclick="updateChart()">Display Data</button>
+        <button type="button" onclick="deselectAll()">Deselect All Options</button>
     </main>
 </body>
 

@@ -35,27 +35,51 @@ function updateChart() {
     ]);
 
     chart.draw(data, options);
+    displayChosenOption();
 }
 
 function calculateScore() {
     var score = 0;
 
-    var shadow = document.querySelector('input[name="shadow"]:checked')?.value;    
+    var shadow = document.querySelector('input[name="shadow"]:checked')?.value;
     var pale = document.querySelector('input[name="pale"]:checked')?.value;
     var garlic = document.querySelector('input[name="garlic"]:checked')?.value;
 
-    if(shadow === 'no') score += 4;
-    if(pale === 'yes') score += 3;
-    if(garlic === 'yes') score += 3;
+    if (shadow === 'no') score += 4;
+    if (pale === 'yes') score += 3;
+    if (garlic === 'yes') score += 3;
 
     return score;
 }
 
 function determineVampire() {
-    var useRandomGuess = document.getElementById("randomGuess").checked;
-    if (useRandomGuess) {
+    var method = document.getElementById("method").value;
+    if (method === "random") {
         return Math.random() < 0.5 ? 1 : 0;
-    } else {
+    } else if (method === "threshold") {
         return calculateScore() > 6 ? 1 : 0;
+    } else if (method === "decision_tree") {
+        // Implement decision tree logic here
+        return Math.random() < 0.5 ? 1 : 0; // Placeholder
+    } else if (method === "neural_network") {
+        // Implement neural network logic here
+        return Math.random() < 0.5 ? 1 : 0; // Placeholder
     }
+}
+
+function displayChosenOption() {
+    var method = document.getElementById("method").value;
+    alert("Chosen method: " + method);
+}
+
+function deselectAll() {
+    var radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(function (radio) {
+        radio.checked = false;
+    });
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+    });
+    document.getElementById('method').selectedIndex = -1;
 }
