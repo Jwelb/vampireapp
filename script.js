@@ -1,6 +1,7 @@
-google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.load('current', { 'packages': ['corechart', 'table'] });
 google.charts.setOnLoadCallback(drawChart);
 
+var classmateData = [];
 var chart;
 var data;
 var options;
@@ -82,4 +83,30 @@ function deselectAll() {
         checkbox.checked = false;
     });
     document.getElementById('method').selectedIndex = -1;
+}
+
+function drawTable(){
+    const tableData = new google.visualization.DataTable();
+    tableData.addColumn('string', 'Name');
+    tableData.addColumn('number', 'Age');
+
+    classmateData.forEach(row => {
+        tableData.addRow([row.name, row.age]);
+    });
+    
+    const table = new google.visualization.Table(document.getElementById('table_div'));
+    table.draw(tableData, {showRowNumber: true, width: '100%', height: '100%'});
+}
+
+function addRow(){
+    const name = document.getElementById('rowName').value;
+    const age = parseInt(document.getElementById('rowAge').value);   
+
+    if (name && !isNaN(age)){
+        classmateData.push({name, age});
+        drawTable();
+        document.getElementById('addRowForm').reset();
+    } else{
+        alert("Please enter a valid name and age.")
+    }
 }

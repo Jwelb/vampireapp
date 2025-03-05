@@ -83,3 +83,78 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+
+#table_div{
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(106, 90, 205, 0.3);
+}
+
+.google-visualization-table{
+    width: 100% !important;
+    border-collapse: collapse;
+}
+
+.google-visualization table th,
+.google-visualization-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.google-visualization-table th {
+    background-color: #6a5acd;
+    color: white;
+    font-weight: bold;
+}
+
+.google-visualization-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.google-visualization-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+#addRowForm {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#addRowForm label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 5px;
+    color: #6a5acd;
+}
+
+#addRowForm input[type="text"],
+#addRowForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#addRowForm button{
+    background-color: #6a5acd;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+#addRowForm button:hover {
+    background-color: #5a4acd;
+}
