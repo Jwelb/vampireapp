@@ -1,7 +1,8 @@
 /* General Page Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f8ff; /* Light pastel blue */
+    background-color: #f5f8ff;
+    /* Light pastel blue */
     color: #333;
     text-align: center;
     margin: 0;
@@ -10,7 +11,8 @@ body {
 
 /* Header */
 header {
-    background-color: #6a5acd; /* Soft purple */
+    background-color: #6a5acd;
+    /* Soft purple */
     padding: 20px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -22,10 +24,12 @@ main {
     width: 90%;
     max-width: 600px;
     margin: 30px auto;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
+    /* White background */
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(106, 90, 205, 0.3); /* Soft purple glow */
+    box-shadow: 0px 0px 15px rgba(106, 90, 205, 0.3);
+    /* Soft purple glow */
 }
 
 /* Headings */
@@ -44,7 +48,8 @@ label {
 }
 
 /* Input Radio Buttons & Checkbox */
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     margin-right: 5px;
     transform: scale(1.1);
 }
@@ -59,7 +64,8 @@ input[type="radio"], input[type="checkbox"] {
 
 /* Button Styling */
 button {
-    background-color: #ff9800; /* Bright orange */
+    background-color: #ff9800;
+    /* Bright orange */
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -74,7 +80,8 @@ button {
 }
 
 button:hover {
-    background-color: #e68900; /* Slightly darker orange */
+    background-color: #e68900;
+    /* Slightly darker orange */
 }
 
 /* Google Chart */
@@ -84,7 +91,7 @@ button:hover {
     justify-content: center;
 }
 
-#table_div{
+#table_div {
     margin: 20px auto;
     width: 100%;
     max-width: 600px;
@@ -94,7 +101,7 @@ button:hover {
     box-shadow: 0px 0px 15px rgba(106, 90, 205, 0.3);
 }
 
-.google-visualization-table{
+.google-visualization-table {
     width: 100% !important;
     border-collapse: collapse;
 }
@@ -142,7 +149,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-#addRowForm button{
+#addRowForm button {
     background-color: #6a5acd;
     color: white;
     font-size: 1rem;
